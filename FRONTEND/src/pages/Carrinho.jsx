@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useCart } from "../context/CartContext";
 import CartItem from "../components/CartItem";
 
@@ -32,6 +33,14 @@ function Carrinho() {
 
     </div>
   );
+=======
+import React from "react";
+
+function Carrinho(){
+    return(
+       <h2>Carrinho</h2>
+    )
+>>>>>>> e11da5f8d8d3d7f0dafdf40a8a383c78b352e519
 }
 
 export default Carrinho;
