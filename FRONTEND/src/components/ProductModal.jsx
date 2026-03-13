@@ -1,8 +1,12 @@
 import React from "react";
 import "../styles/ProductModal.css";
+import { useCart } from "../context/CartContext";
 
-function ProductModal({ produto, onClose, onAddToCart }) {
+
+function ProductModal({ produto, onClose }) {
   if (!produto) return null;
+  const { addToCart } = useCart();
+
 
   return (
     <div className="modal" onClick={onClose}>
@@ -54,11 +58,11 @@ function ProductModal({ produto, onClose, onAddToCart }) {
         <div className="modal-actions">
 
           <button
-            className="add-cart-btn"
-            onClick={() => onAddToCart?.(produto)}
-          >
-           Adicionar ao carrinho 
-          </button>
+          className="add-cart-btn"
+          onClick={() => addToCart(produto)}
+        >
+          Adicionar ao carrinho
+        </button>
 
         </div>
 

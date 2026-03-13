@@ -84,46 +84,12 @@ return params.toString()
 }
 
 
-<<<<<<< HEAD
 function buscarProdutos(){
 
 const query = buildQuery()
 
 onSearch(query)
 
-=======
-async function buscarProdutos(){
-
-try{
-
-
-
-const query = buildQuery()
-
-const response = await fetch(
-`http://127.0.0.1:8000/api/produtos/?${query}`
-)
-
-onSearch(query)
-
-const data = await response.json()
-
-console.log("Produtos filtrados:", data)
-
-/*
-OBS:
-aqui futuramente você deve
-enviar os dados para o componente
-que lista produtos
-*/
-
-}catch(error){
-
-console.error("Erro ao buscar produtos", error)
-
-}
-
->>>>>>> e11da5f8d8d3d7f0dafdf40a8a383c78b352e519
 }
 
 function Option({filter,value,label}){

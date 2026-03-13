@@ -5,10 +5,12 @@ import "../components/ProductGrid"
 import CategorySection from "../components/CategorySection";
 import ProductGrid from "../components/ProductGrid";
 import Footer from "../components/Footer";
-
+import { useProdutos } from "../hooks/useProdutos";
 
 function Home(){
+const { produtos, buscarProdutos } = useProdutos();
 const textRef = useRef(null);
+
 
   const handleMouseMove = (e) => {
     const { offsetWidth, offsetHeight } = textRef.current;
@@ -30,30 +32,6 @@ const textRef = useRef(null);
       "perspective(600px) rotateX(0deg) rotateY(0deg)";
   };
 
-
-const [produtos, setProdutos] = useState([])
-
-async function buscarProdutos(query=""){
-
-try{
-
-const response = await fetch(
-`http://127.0.0.1:8000/api/produtos/?${query}`
-)
-
-const data = await response.json()
-
-const lista = data.results || data
-
-setProdutos(lista)
-
-}catch(error){
-
-console.error("Erro ao buscar produtos:", error)
-
-}
-
-}
 
 useEffect(()=>{
 buscarProdutos()

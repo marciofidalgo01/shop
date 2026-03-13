@@ -1,37 +1,54 @@
 import { useCart } from "../context/CartContext";
-import CartItem from "../components/CartItem";
+import "../styles/Carrinho.css";
 
-function Carrinho() {
+function CartItem({ item }) {
 
-  const { cart } = useCart();
+  const { removeFromCart, addToCart, removeCart1 } = useCart();
 
-  const total = cart.reduce(
-    (acc, item) => acc + Number(item.preco),
-    0
-  );
+  const subtotal = Number(item.preco) * item.quantidade;
 
   return (
 
-    <div className="cart-page">
+    <div className="cart-card">
 
-      <h1>Seu Carrinho</h1>
+      {item.imagens?.length > 0 && (
+        <img src={item.imagens[0].url} alt={item.nome} />
+      )}
 
-      {cart.length === 0 && <p>Carrinho vazio</p>}
+      <div className="cart-info">
 
-      {cart.map((item) => (
-        <CartItem key={item.id} item={item} />
-      ))}
+        <h3>{item.nome}</h3>
 
-      <h2>
-        Total:
-        {total.toLocaleString("pt-BR", {
-          style: "currency",
-          currency: "BRL",
-        })}
-      </h2>
+        <p>
+          Preço unitário: 
+          {Number(item.preco).toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          })}
+        </p>
+
+        <p>Quantidade: {item.quantidade}</p>
+
+        <p>
+          Subtotal:
+          {subtotal.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          })}
+        </p>
+
+       <div className="cart-buttons">
+  <button onClick={() => addToCart(item)}>+</button>
+  <button onClick={() => removeCart1(item.id)}>-</button>
+  <button onClick={() => removeFromCart(item.id)}>Remover</button>
+</div>
+
+      </div>
 
     </div>
+
+
   );
 }
 
-export default Carrinho;
+export default CartItem;

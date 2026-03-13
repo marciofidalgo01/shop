@@ -1,46 +1,74 @@
-<<<<<<< HEAD
 import { useCart } from "../context/CartContext";
 import CartItem from "../components/CartItem";
+import "../styles/Carrinho.css";
 
 function Carrinho() {
 
   const { cart } = useCart();
 
   const total = cart.reduce(
-    (acc, item) => acc + Number(item.preco),
-    0
-  );
+  (acc, item) => acc + Number(item.preco) * item.quantidade,
+  0
+);
 
   return (
-
     <div className="cart-page">
 
-      <h1>Seu Carrinho</h1>
+  {cart.length === 0 ? (
 
-      {cart.length === 0 && <p>Carrinho vazio</p>}
+    <div className="cart-empty">
 
-      {cart.map((item) => (
-        <CartItem key={item.id} item={item} />
-      ))}
+      <img 
+        src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3YwdDBheTF1c2tvZmthZ2Rpdm82bDFsNDNyOGwzdGhta3A1dmY0cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bGFzfLiR1H6ImtQQf6/giphy.gif" 
+        alt="Carrinho vazio"
+        className="cart-empty-img"
+      />
 
-      <h2>
-        Total:
-        {total.toLocaleString("pt-BR", {
-          style: "currency",
-          currency: "BRL",
-        })}
-      </h2>
+      <h2>Seu carrinho está vazio</h2>
+
+      <p>
+        Os produtos irão aparecer aqui caso você os adicione. Basta clicar no produto desejado e depois em "Adicionar ao Carrinho".
+      </p>
+
+      <button 
+        className="cart-shop-btn"
+        onClick={() => window.location.href = "/"}
+      >
+        Ver produtos
+      </button>
 
     </div>
-  );
-=======
-import React from "react";
 
-function Carrinho(){
-    return(
-       <h2>Carrinho</h2>
-    )
->>>>>>> e11da5f8d8d3d7f0dafdf40a8a383c78b352e519
+  ) : (
+
+    <>
+      <div className="cart-items">
+        {cart.map((item) => (
+          <CartItem key={item.id} item={item} />
+        ))}
+      </div>
+
+      <div className="cart-total">
+
+        <h2>
+          Total:
+          {total.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          })}
+        </h2>
+
+        <button className="checkout-btn">
+          Finalizar Compra
+        </button>
+
+      </div>
+    </>
+
+  )}
+
+</div>
+  );
 }
 
 export default Carrinho;
