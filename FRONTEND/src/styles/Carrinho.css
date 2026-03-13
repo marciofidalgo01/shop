@@ -1,7 +1,5 @@
 :root{
 
-  /* cores modo claro */
-
   --bg-page: #f5f5f5;
   --card-bg-odd: #ffffff;
   --card-bg-even: #deffda;
@@ -45,7 +43,6 @@
   margin: 40px auto;
 }
 
-/* CARD */
 
 .cart-card {
   display: grid;
@@ -67,14 +64,12 @@
   background: var(--card-bg-even);
 }
 
-/* hover */
 
 .cart-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 
-/* imagem */
 
 .cart-card img {
   width: 100%;
@@ -83,7 +78,6 @@
   border-radius: 10px;
 }
 
-/* info */
 
 .cart-info {
   display: flex;
@@ -96,21 +90,18 @@
   font-size: 18px;
 }
 
-/* texto */
 
 .cart-info p {
   color: var(--text-secondary);
   font-size: 14px;
 }
 
-/* subtotal destaque */
 
 .cart-info p:nth-of-type(3) {
   color: var(--text-main);
   font-weight: bold;
 }
 
-/* botões */
 
 .cart-info button {
   width: fit-content;
@@ -118,36 +109,34 @@
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: bold;
   margin-right: 6px;
   transition: 0.2s;
 }
 
-/* + */
 
 .cart-info button:nth-of-type(1) {
   background: var(--btn-add);
   color: #111;
 }
 
-/* - */
 
 .cart-info button:nth-of-type(2) {
   background: var(--btn-minus);
   color: white;
 }
 
-/* remover */
 
 .cart-info button:nth-of-type(3) {
   background: var(--btn-remove);
   color: white;
+  
 }
 
-/* hover */
 
 .cart-info button:hover {
-  transform: scale(1.05);
+    transform: translateY(-2px);
+
 }
 
 .cart-buttons {
@@ -197,18 +186,19 @@
 }
 
 .cart-shop-btn{
-  margin-top:10px;
   padding:12px 22px;
   background:var(--accent);
   border:none;
   border-radius:8px;
-  font-weight:bold;
   cursor:pointer;
   transition:0.2s;
+  font-weight: bold;
+  border: 2px solid var(--accent);
 }
 
 .cart-shop-btn:hover{
-  transform:scale(1.05);
+  transform: translateY(-4px);
+  border: 2px solid black;
 }
 
 .cart-items{
@@ -226,10 +216,18 @@ box-shadow: 2px 5px 18px -2px #000000;
 }
 
 .checkout-btn{
-  background:var(--accent);
+  background: rgb(0, 153, 255);
   border:none;
   padding:12px 20px;
   border-radius:8px;
-  font-weight:bold;
   cursor:pointer;
+  transition: 0.4s;
+  font-weight: bold;
+  border: 2px solid rgb(0, 153, 255);
+
+}
+
+.checkout-btn:hover{
+  transform: translateY(-4px);
+  border: 2px solid black;
 }

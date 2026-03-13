@@ -159,7 +159,6 @@
 }
 
 
-/* brilho suave */
 
 .add-cart-btn:hover{
   background:#00ff88;
@@ -171,7 +170,6 @@
 }
 
 
-/* efeito clique */
 
 .add-cart-btn:active{
 
@@ -182,7 +180,6 @@
 }
 
 
-/* ripple */
 
 .add-cart-btn::after{
 
@@ -269,3 +266,50 @@
   }
 
 }
+
+.alertCarrinho {
+  position: fixed;
+  top: 20px;
+  right: 50%;
+  transform: translateX(50%);
+
+  padding: 14px 22px;
+  border-radius: 10px;
+
+  background-color: black;
+  color: #00ff88;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-weight: 500;
+  font-size: 14px;
+
+  white-space: nowrap;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+  z-index: 9999;
+
+  animation: slideDown 0.35s ease;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateX(50%) translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+.alertCarrinho::before {
+  content: "✔";
+  font-weight: bold;
+  font-size: 16px;
+}
+
+

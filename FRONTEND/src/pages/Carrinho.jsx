@@ -42,6 +42,7 @@ function Carrinho() {
   ) : (
 
     <>
+    
       <div className="cart-items">
         {cart.map((item) => (
           <CartItem key={item.id} item={item} />
@@ -58,10 +59,21 @@ function Carrinho() {
           })}
         </h2>
 
-        <button className="checkout-btn">
+        <div style={
+          {gap: '30px',
+          display: 'flex'
+          }
+          }>
+          <button 
+            className="cart-shop-btn"
+            onClick={() => window.location.href = "/"}>
+            Voltar
+          </button> 
+          
+         <button className="checkout-btn">
           Finalizar Compra
-        </button>
-
+         </button>
+        </div>
       </div>
     </>
 

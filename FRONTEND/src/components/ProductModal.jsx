@@ -1,12 +1,32 @@
 import React from "react";
 import "../styles/ProductModal.css";
 import { useCart } from "../context/CartContext";
+import { useState, useEffect } from "react";
 
 
-function ProductModal({ produto, onClose }) {
-  if (!produto) return null;
-  const { addToCart } = useCart();
+function ProductModal({ produto, onClose, AlertCarrinho  }) {
+if (!produto) return null;
 
+const { addToCart } = useCart();
+
+const [mostrarAlert, setMostrarAlert] = useState(false);
+function AlertCarrinho() {
+  return (
+    <div className='alertCarrinho'>
+     <p>Adicionado com sucesso!</p>
+    </div>
+  );
+}
+
+useEffect(() => {
+  if (mostrarAlert) {
+    const timer = setTimeout(() => {
+      setMostrarAlert(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }
+}, [mostrarAlert]);
 
   return (
     <div className="modal" onClick={onClose}>
@@ -57,12 +77,20 @@ function ProductModal({ produto, onClose }) {
 
         <div className="modal-actions">
 
-          <button
-          className="add-cart-btn"
-          onClick={() => addToCart(produto)}
-        >
-          Adicionar ao carrinho
-        </button>
+          
+       
+    <button
+      className="add-cart-btn"
+      onClick={() => {
+        addToCart(produto);
+        setMostrarAlert(true);
+      }}
+    >
+      Adicionar ao carrinho
+    </button>
+
+    {mostrarAlert && <AlertCarrinho />}
+
 
         </div>
 
