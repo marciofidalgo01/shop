@@ -1,32 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/ProductModal.css";
 import { useCart } from "../context/CartContext";
-import { useState, useEffect } from "react";
 
+function ProductModal({ produto, onClose }) {
+  if (!produto) return null;
 
-function ProductModal({ produto, onClose, AlertCarrinho  }) {
-if (!produto) return null;
+  const { addToCart } = useCart();
+  const [mostrarAlert, setMostrarAlert] = useState(false);
 
-const { addToCart } = useCart();
-
-const [mostrarAlert, setMostrarAlert] = useState(false);
-function AlertCarrinho() {
-  return (
-    <div className='alertCarrinho'>
-     <p>Adicionado com sucesso!</p>
-    </div>
-  );
-}
-
-useEffect(() => {
-  if (mostrarAlert) {
-    const timer = setTimeout(() => {
-      setMostrarAlert(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
+  function AlertCarrinho() {
+    return (
+      <div className='alertCarrinho'>
+        <p>Adicionado com sucesso!</p>
+      </div>
+    );
   }
-}, [mostrarAlert]);
+
+  useEffect(() => {
+    if (mostrarAlert) {
+      const timer = setTimeout(() => {
+        setMostrarAlert(false);
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [mostrarAlert]);
 
   return (
     <div className="modal" onClick={onClose}>
@@ -50,21 +48,28 @@ useEffect(() => {
 
           <div className="modal-info">
 
-<p className="modal-price">
+            {/* 💰 PREÇO */}
+            <p className="modal-price">
               {Number(produto.preco).toLocaleString("pt-BR", {
                 style: "currency",
                 currency: "BRL",
               })}
             </p>
 
-            <p><strong>Marca:</strong> {produto.marca}</p>
+            {/* 📂 CATEGORIA */}
+            {produto.categoria && (
+              <p>
+                <strong>Categoria:</strong> {produto.categoria.nome}
+              </p>
+            )}
 
-            
+            {/* 📦 ESTOQUE */}
+            <p>
+              <strong>Disponibilidade:</strong>{" "}
+              {produto.estoque > 0 ? "Em estoque" : "Indisponível"}
+            </p>
 
-            <p><strong>Ano:</strong> {produto.ano}</p>
-
-            <p><strong>Motor:</strong> {produto.motor}</p>
-
+            {/* 📝 DESCRIÇÃO */}
             {produto.descricao && (
               <p className="modal-description">
                 {produto.descricao}
@@ -77,20 +82,18 @@ useEffect(() => {
 
         <div className="modal-actions">
 
-          
-       
-    <button
-      className="add-cart-btn"
-      onClick={() => {
-        addToCart(produto);
-        setMostrarAlert(true);
-      }}
-    >
-      Adicionar ao carrinho
-    </button>
+          <button
+            className="add-cart-btn"
+            onClick={() => {
+              addToCart(produto);
+              setMostrarAlert(true);
+            }}
+            disabled={produto.estoque <= 0}
+          >
+            {produto.estoque > 0 ? "Adicionar ao carrinho" : "Sem estoque"}
+          </button>
 
-    {mostrarAlert && <AlertCarrinho />}
-
+          {mostrarAlert && <AlertCarrinho />}
 
         </div>
 

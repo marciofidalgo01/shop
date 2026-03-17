@@ -1,18 +1,20 @@
 from django.db import models
 
 
+class Categoria(models.Model):
+    nome = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True)
+
+    def __str__(self):
+        return self.nome
+    
 class Produto(models.Model):
 
     nome = models.CharField(max_length=250)
 
-    sku = models.CharField(max_length=50, unique=True)
+    slug = models.SlugField(unique=True)
 
-    codigo = models.CharField(
-        max_length=50,
-        unique=True,
-        null=True,
-        blank=True
-    )
+    sku = models.CharField(max_length=50, unique=True)
 
     preco = models.DecimalField(max_digits=12, decimal_places=2)
 
@@ -23,46 +25,20 @@ class Produto(models.Model):
 
     descricao = models.TextField()
 
-    peso = models.DecimalField(
-        max_digits=6,
-        decimal_places=2,
+    categoria = models.ForeignKey(
+        Categoria,
+        on_delete=models.SET_NULL,
         null=True,
-        blank=True
+        related_name="produtos"
     )
 
-    marca = models.CharField(
-        max_length=100,
-        null=True,
-        blank=True,
-        db_index=True
-    )
+    criado_em = models.DateTimeField(auto_now_add=True)
 
-    ano = models.IntegerField(
-        null=True,
-        blank=True,
-        db_index=True
-    )
-
-    motor = models.CharField(
-        max_length=20,
-        null=True,
-        blank=True,
-        db_index=True
-    )
-
-    categoria = models.CharField(
-        max_length=50
-        )
-
-    criado_em = models.DateTimeField(auto_now_add=True,null=True)
-
-    class Meta:
-        ordering = ["-criado_em"]
+    atualizado_em = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.nome} ({self.sku})"
-
-
+        return self.nome
+    
 class ProdutoImagem(models.Model):
 
     produto = models.ForeignKey(
@@ -75,4 +51,4 @@ class ProdutoImagem(models.Model):
 
     def __str__(self):
         return f"Imagem de {self.produto.nome}"
-    
+        
