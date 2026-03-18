@@ -1,33 +1,65 @@
 import os
 import django
 import json
+import uuid
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 django.setup()
 
-from produtos.models import Produto
+from produtos.models import Produto, Categoria, ProdutoImagem
+from django.utils.text import slugify
+
 
 with open("produtos.json", "r", encoding="utf-8") as file:
     produtos = json.load(file)
 
-for item in produtos:
+mapa_produtos = {} 
 
+for item in produtos:
     dados = item["fields"]
 
-    Produto.objects.create(
-        nome=dados["nome"],
-        sku=dados["sku"],
-        codigo=dados.get("codigo"),
-        preco=dados["preco"],
-        estoque=dados.get("estoque", 0),
-        ativo=dados.get("ativo", True),
-        destaque=dados.get("destaque", False),
-        descricao=dados.get("descricao", ""),
-        peso=dados.get("peso"),
-        marca=dados.get("marca"),
-        categoria=dados["categoria"],
-        ano=dados.get("ano"),
-        motor=dados.get("motor"),
+    categoria_nome = dados["categoria"]
+
+    categoria, _ = Categoria.objects.get_or_create(
+        nome=categoria_nome,
+        defaults={"slug": slugify(categoria_nome)}
     )
 
-print("Produtos inseridos com sucesso!")
+    produto, criado = Produto.objects.update_or_create(
+        sku=dados["sku"],
+        defaults={
+            "nome": dados["nome"],
+            "preco": dados["preco"],
+            "estoque": dados.get("estoque", 0),
+            "ativo": dados.get("ativo", True),
+            "destaque": dados.get("destaque", False),
+            "descricao": dados.get("descricao", ""),
+            "categoria": categoria,
+        }
+    )
+
+    if criado:
+        produto.slug = f"{slugify(dados['nome'])}-{uuid.uuid4().hex[:6]}"
+        produto.save()
+
+
+
+with open("imagens.json", "r", encoding="utf-8") as file:
+    imagens = json.load(file)
+
+for item in imagens:
+    dados = item["fields"]
+
+    try:
+        produto = Produto.objects.get(id=dados["produto"])
+    except Produto.DoesNotExist:
+        print(f"Produto ID {dados['produto']} não encontrado")
+        continue
+
+    ProdutoImagem.objects.get_or_create(
+        produto=produto,
+        url=dados["url"]
+    )
+print("Inseridos com sucesso")
+
+#  "produto": 21, depois mudar isso aqui para o id 1

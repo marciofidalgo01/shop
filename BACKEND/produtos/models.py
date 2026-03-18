@@ -21,6 +21,7 @@ class Produto(models.Model):
     estoque = models.PositiveIntegerField(default=0)
 
     ativo = models.BooleanField(default=True)
+    
     destaque = models.BooleanField(default=False)
 
     descricao = models.TextField()

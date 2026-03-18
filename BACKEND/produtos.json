@@ -1,82 +1,301 @@
 [
 {
-"model":"produtos.produto",
-"fields":{"nome":"Filtro de Óleo Premium","sku":"FO1001","codigo":"7891001","preco":120,"estoque":35,"ativo":true,"destaque":false,"descricao":"Filtro de óleo de alta eficiência","peso":0.4,"marca":"Fiat","categoria":"motor","ano":2022,"motor":"1.4"}
-},
+"model": "produtos.produto",
+"fields": {
+"nome": "Filtro de Óleo Premium",
+"sku": "FO1001",
+"codigo": "7891001",
+"preco": 120,
+"estoque": 35,
+"ativo": true,
+"destaque": false,
+"descricao": "Filtro de óleo de alta eficiência",
+"categoria": "motor"
+}
+}
+,
 {
-"model":"produtos.produto",
-"fields":{"nome":"Pastilha de Freio Dianteira","sku":"PF1002","codigo":"7891002","preco":240,"estoque":20,"ativo":true,"destaque":true,"descricao":"Pastilha de freio dianteira cerâmica","peso":1.2,"marca":"Chevrolet","categoria":"freio","ano":2023,"motor":"1.6"}
-},
+"model": "produtos.produto",
+"fields": {
+"nome": "Pastilha de Freio Dianteira",
+"sku": "PF1002",
+"codigo": "7891002",
+"preco": 240,
+"estoque": 20,
+"ativo": true,
+"destaque": true,
+"descricao": "Pastilha de freio dianteira cerâmica",
+"categoria": "freio"
+}
+}
+,
 {
-"model":"produtos.produto",
-"fields":{"nome":"Amortecedor Dianteiro","sku":"AM1003","codigo":"7891003","preco":520,"estoque":15,"ativo":true,"destaque":false,"descricao":"Amortecedor dianteiro reforçado","peso":3.5,"marca":"Volkswagen","categoria":"suspensao","ano":2021,"motor":"1.6"}
-},
+"model": "produtos.produto",
+"fields": {
+"nome": "Amortecedor Dianteiro",
+"sku": "AM1003",
+"codigo": "7891003",
+"preco": 520,
+"estoque": 15,
+"ativo": true,
+"destaque": false,
+"descricao": "Amortecedor dianteiro reforçado",
+"categoria": "suspensao"
+}
+}
+,
 {
-"model":"produtos.produto",
-"fields":{"nome":"Bomba de Combustível","sku":"BC1004","codigo":"7891004","preco":380,"estoque":18,"ativo":true,"destaque":false,"descricao":"Bomba elétrica de combustível","peso":1.1,"marca":"Ford","categoria":"eletrica","ano":2024,"motor":"2"}
-},
+"model": "produtos.produto",
+"fields": {
+"nome": "Bomba de Combustível",
+"sku": "BC1004",
+"codigo": "7891004",
+"preco": 380,
+"estoque": 18,
+"ativo": true,
+"destaque": false,
+"descricao": "Bomba elétrica de combustível",
+"categoria": "eletrica"
+}
+}
+,
 {
-"model":"produtos.produto",
-"fields":{"nome":"Radiador Completo","sku":"RA1005","codigo":"7891005","preco":690,"estoque":10,"ativo":true,"destaque":true,"descricao":"Radiador de alumínio completo","peso":4.2,"marca":"Toyota","categoria":"arrefecimento","ano":2023,"motor":"2"}
-},
+"model": "produtos.produto",
+"fields": {
+"nome": "Radiador Completo",
+"sku": "RA1005",
+"codigo": "7891005",
+"preco": 690,
+"estoque": 10,
+"ativo": true,
+"destaque": true,
+"descricao": "Radiador de alumínio completo",
+"categoria": "arrefecimento"
+}
+}
+,
 {
-"model":"produtos.produto",
-"fields":{"nome":"Disco de Freio Ventilado","sku":"DF1006","codigo":"7891006","preco":310,"estoque":22,"ativo":true,"destaque":false,"descricao":"Disco de freio ventilado dianteiro","peso":2.8,"marca":"Fiat","categoria":"freio","ano":2021,"motor":"1.6"}
-},
+"model": "produtos.produto",
+"fields": {
+"nome": "Disco de Freio Ventilado",
+"sku": "DF1006",
+"codigo": "7891006",
+"preco": 310,
+"estoque": 22,
+"ativo": true,
+"destaque": false,
+"descricao": "Disco de freio ventilado dianteiro",
+"categoria": "freio"
+}
+}
+,
 {
-"model":"produtos.produto",
-"fields":{"nome":"Bobina de Ignição","sku":"BI1007","codigo":"7891007","preco":180,"estoque":40,"ativo":true,"destaque":false,"descricao":"Bobina de ignição eletrônica","peso":0.6,"marca":"Chevrolet","categoria":"eletrica","ano":2022,"motor":"1"}
-},
+"model": "produtos.produto",
+"fields": {
+"nome": "Bobina de Ignição",
+"sku": "BI1007",
+"codigo": "7891007",
+"preco": 180,
+"estoque": 40,
+"ativo": true,
+"destaque": false,
+"descricao": "Bobina de ignição eletrônica",
+"categoria": "eletrica"
+}
+}
+,
 {
-"model":"produtos.produto",
-"fields":{"nome":"Kit Embreagem","sku":"KE1008","codigo":"7891008","preco":650,"estoque":12,"ativo":true,"destaque":true,"descricao":"Kit completo de embreagem","peso":5.3,"marca":"Volkswagen","categoria":"motor","ano":2024,"motor":"2"}
-},
+"model": "produtos.produto",
+"fields": {
+"nome": "Kit Embreagem",
+"sku": "KE1008",
+"codigo": "7891008",
+"preco": 650,
+"estoque": 12,
+"ativo": true,
+"destaque": true,
+"descricao": "Kit completo de embreagem",
+"categoria": "motor"
+}
+}
+,
 {
-"model":"produtos.produto",
-"fields":{"nome":"Sensor de Temperatura","sku":"ST1009","codigo":"7891009","preco":140,"estoque":28,"ativo":true,"destaque":false,"descricao":"Sensor de temperatura do motor","peso":0.2,"marca":"Ford","categoria":"arrefecimento","ano":2020,"motor":"1.4"}
-},
+"model": "produtos.produto",
+"fields": {
+"nome": "Sensor de Temperatura",
+"sku": "ST1009",
+"codigo": "7891009",
+"preco": 140,
+"estoque": 28,
+"ativo": true,
+"destaque": false,
+"descricao": "Sensor de temperatura do motor",
+"categoria": "arrefecimento"
+}
+}
+,
 {
-"model":"produtos.produto",
-"fields":{"nome":"Bandeja de Suspensão","sku":"BS1010","codigo":"7891010","preco":430,"estoque":14,"ativo":true,"destaque":false,"descricao":"Bandeja de suspensão reforçada","peso":3.1,"marca":"Toyota","categoria":"suspensao","ano":2023,"motor":"2"}
-},
+"model": "produtos.produto",
+"fields": {
+"nome": "Bandeja de Suspensão",
+"sku": "BS1010",
+"codigo": "7891010",
+"preco": 430,
+"estoque": 14,
+"ativo": true,
+"destaque": false,
+"descricao": "Bandeja de suspensão reforçada",
+"categoria": "suspensao"
+}
+}
+,
 {
-"model":"produtos.produto",
-"fields":{"nome":"Alternador 120A","sku":"AL1011","codigo":"7891011","preco":720,"estoque":9,"ativo":true,"destaque":true,"descricao":"Alternador automotivo 120 amperes","peso":4.4,"marca":"Fiat","categoria":"eletrica","ano":2024,"motor":"1.6"}
-},
+"model": "produtos.produto",
+"fields": {
+"nome": "Alternador 120A",
+"sku": "AL1011",
+"codigo": "7891011",
+"preco": 720,
+"estoque": 9,
+"ativo": true,
+"destaque": true,
+"descricao": "Alternador automotivo 120 amperes",
+"categoria": "eletrica"
+}
+}
+,
 {
-"model":"produtos.produto",
-"fields":{"nome":"Coxim do Motor","sku":"CM1012","codigo":"7891012","preco":210,"estoque":30,"ativo":true,"destaque":false,"descricao":"Coxim de motor hidráulico","peso":1.4,"marca":"Chevrolet","categoria":"motor","ano":2022,"motor":"1.4"}
-},
+"model": "produtos.produto",
+"fields": {
+"nome": "Coxim do Motor",
+"sku": "CM1012",
+"codigo": "7891012",
+"preco": 210,
+"estoque": 30,
+"ativo": true,
+"destaque": false,
+"descricao": "Coxim de motor hidráulico",
+"categoria": "motor"
+}
+}
+,
 {
-"model":"produtos.produto",
-"fields":{"nome":"Pastilha de Freio Traseira","sku":"PF1013","codigo":"7891013","preco":170,"estoque":26,"ativo":true,"destaque":false,"descricao":"Pastilha de freio traseira","peso":1,"marca":"Volkswagen","categoria":"freio","ano":2021,"motor":"1"}
-},
+"model": "produtos.produto",
+"fields": {
+"nome": "Pastilha de Freio Traseira",
+"sku": "PF1013",
+"codigo": "7891013",
+"preco": 170,
+"estoque": 26,
+"ativo": true,
+"destaque": false,
+"descricao": "Pastilha de freio traseira",
+"categoria": "freio"
+}
+}
+,
 {
-"model":"produtos.produto",
-"fields":{"nome":"Mola Helicoidal","sku":"MH1014","codigo":"7891014","preco":350,"estoque":17,"ativo":true,"destaque":false,"descricao":"Mola helicoidal traseira","peso":2.6,"marca":"Ford","categoria":"suspensao","ano":2020,"motor":"diesel"}
-},
+"model": "produtos.produto",
+"fields": {
+"nome": "Mola Helicoidal",
+"sku": "MH1014",
+"codigo": "7891014",
+"preco": 350,
+"estoque": 17,
+"ativo": true,
+"destaque": false,
+"descricao": "Mola helicoidal traseira",
+"categoria": "suspensao"
+}
+}
+,
 {
-"model":"produtos.produto",
-"fields":{"nome":"Bomba d'Água","sku":"BA1015","codigo":"7891015","preco":290,"estoque":21,"ativo":true,"destaque":false,"descricao":"Bomba de água do motor","peso":1.7,"marca":"Toyota","categoria":"arrefecimento","ano":2022,"motor":"2"}
-},
+"model": "produtos.produto",
+"fields": {
+"nome": "Bomba d'Água",
+"sku": "BA1015",
+"codigo": "7891015",
+"preco": 290,
+"estoque": 21,
+"ativo": true,
+"destaque": false,
+"descricao": "Bomba de água do motor",
+"categoria": "arrefecimento"
+}
+}
+,
 {
-"model":"produtos.produto",
-"fields":{"nome":"Motor de Partida","sku":"MP1016","codigo":"7891016","preco":680,"estoque":11,"ativo":true,"destaque":true,"descricao":"Motor de partida completo","peso":4.9,"marca":"Fiat","categoria":"eletrica","ano":2024,"motor":"1.6"}
-},
+"model": "produtos.produto",
+"fields": {
+"nome": "Motor de Partida",
+"sku": "MP1016",
+"codigo": "7891016",
+"preco": 680,
+"estoque": 11,
+"ativo": true,
+"destaque": true,
+"descricao": "Motor de partida completo",
+"categoria": "eletrica"
+}
+}
+,
 {
-"model":"produtos.produto",
-"fields":{"nome":"Válvula Termostática","sku":"VT1017","codigo":"7891017","preco":150,"estoque":32,"ativo":true,"destaque":false,"descricao":"Válvula termostática do sistema","peso":0.5,"marca":"Chevrolet","categoria":"arrefecimento","ano":2023,"motor":"1.4"}
-},
+"model": "produtos.produto",
+"fields": {
+"nome": "Válvula Termostática",
+"sku": "VT1017",
+"codigo": "7891017",
+"preco": 150,
+"estoque": 32,
+"ativo": true,
+"destaque": false,
+"descricao": "Válvula termostática do sistema",
+"categoria": "arrefecimento"
+}
+}
+,
 {
-"model":"produtos.produto",
-"fields":{"nome":"Kit Correia Dentada","sku":"KD1018","codigo":"7891018","preco":420,"estoque":16,"ativo":true,"destaque":false,"descricao":"Kit completo correia dentada","peso":2.3,"marca":"Volkswagen","categoria":"motor","ano":2021,"motor":"1.6"}
-},
+"model": "produtos.produto",
+"fields": {
+"nome": "Kit Correia Dentada",
+"sku": "KD1018",
+"codigo": "7891018",
+"preco": 420,
+"estoque": 16,
+"ativo": true,
+"destaque": false,
+"descricao": "Kit completo correia dentada",
+"categoria": "motor"
+}
+}
+,
 {
-"model":"produtos.produto",
-"fields":{"nome":"Disco de Freio Traseiro","sku":"DF1019","codigo":"7891019","preco":260,"estoque":19,"ativo":true,"destaque":false,"descricao":"Disco de freio traseiro sólido","peso":2.4,"marca":"Ford","categoria":"freio","ano":2022,"motor":"2"}
-},
+"model": "produtos.produto",
+"fields": {
+"nome": "Disco de Freio Traseiro",
+"sku": "DF1019",
+"codigo": "7891019",
+"preco": 260,
+"estoque": 19,
+"ativo": true,
+"destaque": false,
+"descricao": "Disco de freio traseiro sólido",
+"categoria": "freio"
+}
+}
+,
 {
-"model":"produtos.produto",
-"fields":{"nome":"Terminal de Direção","sku":"TD1020","codigo":"7891020","preco":190,"estoque":27,"ativo":true,"destaque":false,"descricao":"Terminal de direção reforçado","peso":1.1,"marca":"Toyota","categoria":"suspensao","ano":2024,"motor":"diesel"}
+"model": "produtos.produto",
+"fields": {
+"nome": "Terminal de Direção",
+"sku": "TD1020",
+"codigo": "7891020",
+"preco": 190,
+"estoque": 27,
+"ativo": true,
+"destaque": false,
+"descricao": "Terminal de direção reforçado",
+"categoria": "suspensao"
+}
 }
 ]

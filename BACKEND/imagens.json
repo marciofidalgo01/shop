@@ -2,9 +2,10 @@
 {
 "model":"produtos.produtoimagem",
 "fields":{
-"produto":1,
+"produto":21, 
 "url":"https://vw-digital-cdn-br.itd.vw.com.br/assets/newsroom-cdn-br-ps/901e7a0f-7623-403b-b357-1be65164472a_low.png"
 }
+ 
 },
 {
 "model":"produtos.produtoimagem",
